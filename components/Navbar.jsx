@@ -5,21 +5,22 @@ import profileDefault from '@/assets/images/profile.png';
 const Navbar = () => {
   return (
     <nav className='bg-blue-700 border-b border-blue-500'>
-      <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
-        <div className='relative flex h-20 items-center justify-between'>
+      <div className='px-2 mx-auto max-w-7xl sm:px-6 lg:px-8'>
+
+        <div className='relative flex items-center justify-between h-20'>
           <div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
             {/* <!-- Mobile menu button--> */}
             <button
               type='button'
               id='mobile-dropdown-button'
-              className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white'
+              className='relative inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-700 hover:text-white focus:outline -none focus:ring-2 focus:ring-inset focus:ring-white'
               aria-controls='mobile-menu'
               aria-expanded='false'
             >
               <span className='absolute -inset-0.5'></span>
               <span className='sr-only'>Open main menu</span>
               <svg
-                className='block h-6 w-6'
+                className='block w-6 h-6'
                 fill='none'
                 viewBox='0 0 24 24'
                 strokeWidth='1.5'
@@ -35,12 +36,12 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
+          <div className='flex items-center justify-center flex-1 md:items-stretch md:justify-start'>
             {/* <!-- Logo --> */}
-            <a className='flex flex-shrink-0 items-center' href='/index.html'>
-              <Image className='h-10 w-auto' src={logo} alt='PropertyPulse' />
+            <a className='flex items-center flex-shrink-0' href='/index.html'>
+              <Image className='w-auto h-10' src={logo} alt='PropertyPulse' />
 
-              <span className='hidden md:block text-white text-2xl font-bold ml-2'>
+              <span className='hidden ml-2 text-2xl font-bold text-white md:block'>
                 PropertyPulse
               </span>
             </a>
@@ -49,19 +50,19 @@ const Navbar = () => {
               <div className='flex space-x-2'>
                 <a
                   href='/index.html'
-                  className='text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+                  className='px-3 py-2 text-white bg-black rounded-md hover:bg-gray-900 hover:text-white'
                 >
                   Home
                 </a>
                 <a
                   href='/properties.html'
-                  className='text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+                  className='px-3 py-2 text-white rounded-md hover:bg-gray-900 hover:text-white'
                 >
                   Properties
                 </a>
                 <a
                   href='/add-property.html'
-                  className='text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
+                  className='px-3 py-2 text-white rounded-md hover:bg-gray-900 hover:text-white'
                 >
                   Add Property
                 </a>
@@ -72,8 +73,8 @@ const Navbar = () => {
           {/* <!-- Right Side Menu (Logged Out) --> */}
           <div className='hidden md:block md:ml-6'>
             <div className='flex items-center'>
-              <button className='flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'>
-                <i className='fa-brands fa-google text-white mr-2'></i>
+              <button className='flex items-center px-3 py-2 text-white bg-gray-700 rounded-md hover:bg-gray-900 hover:text-white'>
+                <i className='mr-2 text-white fa-brands fa-google'></i>
                 <span>Login or Register</span>
               </button>
             </div>
@@ -84,12 +85,12 @@ const Navbar = () => {
             <a href='messages.html' className='relative group'>
               <button
                 type='button'
-                className='relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                className='relative p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
               >
                 <span className='absolute -inset-1.5'></span>
                 <span className='sr-only'>View notifications</span>
                 <svg
-                  className='h-6 w-6'
+                  className='w-6 h-6'
                   fill='none'
                   viewBox='0 0 24 24'
                   strokeWidth='1.5'
@@ -113,7 +114,7 @@ const Navbar = () => {
               <div>
                 <button
                   type='button'
-                  className='relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
+                  className='relative flex text-sm bg-gray-800 rounded-full focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800'
                   id='user-menu-button'
                   aria-expanded='false'
                   aria-haspopup='true'
@@ -121,7 +122,7 @@ const Navbar = () => {
                   <span className='absolute -inset-1.5'></span>
                   <span className='sr-only'>Open user menu</span>
                   <Image
-                    className='h-8 w-8 rounded-full'
+                    className='w-8 h-8 rounded-full'
                     src={profileDefault}
                     alt=''
                   />
@@ -131,7 +132,7 @@ const Navbar = () => {
               {/* <!-- Profile dropdown --> */}
               <div
                 id='user-menu'
-                className='hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
+                className='absolute right-0 z-10 hidden w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
                 role='menu'
                 aria-orientation='vertical'
                 aria-labelledby='user-menu-button'
@@ -172,27 +173,27 @@ const Navbar = () => {
 
       {/* <!-- Mobile menu, show/hide based on menu state. --> */}
       <div className='hidden' id='mobile-menu'>
-        <div className='space-y-1 px-2 pb-3 pt-2'>
+        <div className='px-2 pt-2 pb-3 space-y-1'>
           <a
             href='/index.html'
-            className='bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium'
+            className='block px-3 py-2 text-base font-medium text-white bg-gray-900 rounded-md'
           >
             Home
           </a>
           <a
             href='/properties.html'
-            className='text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'
+            className='block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white'
           >
             Properties
           </a>
           <a
             href='/add-property.html'
-            className='text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium'
+            className='block px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white'
           >
             Add Property
           </a>
-          <button className='flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-4'>
-            <i className='fa-brands fa-google mr-2'></i>
+          <button className='flex items-center px-3 py-2 my-4 text-white bg-gray-700 rounded-md hover:bg-gray-900 hover:text-white'>
+            <i className='mr-2 fa-brands fa-google'></i>
             <span>Login or Register</span>
           </button>
         </div>

@@ -6,7 +6,7 @@ import '@/assets/styles/global.css'
 export const metadata = {
   title: 'TrayTestingApp change tab title',
   // need to fine tune the description
-  description: 'thingsto test',
+  description: 'things to test',
   keywords: 'test, test, test',
 }
 
@@ -15,7 +15,8 @@ export default function MainLayout({ children }) {
     <html lang='en'>
       {/* <body className={inter.className}> */}
       <body>
-        <div>{children}</div>
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
   )

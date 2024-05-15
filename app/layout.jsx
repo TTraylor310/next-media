@@ -2,6 +2,7 @@
 // const inter = Inter({ subsets: ["latin"] });
 import Navbar from '@/components/Navbar'
 import '@/assets/styles/global.css'
+import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'TrayTestingApp change tab title',
@@ -17,6 +18,7 @@ export default function MainLayout({ children }) {
       <body>
         <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

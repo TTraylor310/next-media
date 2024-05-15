@@ -1,11 +1,36 @@
-import Link from 'next/link'
+import properties from '@/properties.json'
 
-const PropertiesPage = () => {
+import PropertyCard from '@/components/PropertyCard'
+
+async function fetchProperties() {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties`)
+    if(!res.ok) {
+      throw new Error('Error fetching properties')
+    }
+    return res.json()
+    // console.log()
+  } catch (error) {
+    console.log('Error fetching the data BRO',error)
+  }
+}
+
+const PropertiesPage = async () => {
+  const properties2 = await fetchProperties()
   return (
-    <div>
-      <h1 className="text-3xl">Properties</h1>
-      <Link href='/'>Go Home</Link>
-    </div>
+    <section className='px-4 py-6'>
+      <div className='px-4 py-6 m-auto container-xl lg:container'>
+        {properties.length === 0 ? (
+          <p>No properties found</p>
+        ) : (
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
+            {properties.map((property) => (
+              <PropertyCard key={property._id} property={property} />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   )
 }
 export default PropertiesPage
